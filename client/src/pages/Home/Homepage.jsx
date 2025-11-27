@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import Hero from './Hero'
 import AboutUs from './AboutUs'
 import Faq from './Faq'
-import ContactUs from './Contactus'
+import ContactUs from './ContactUs'
 import Footer from './Footer'
 import Navbar from './Navbar'
 
