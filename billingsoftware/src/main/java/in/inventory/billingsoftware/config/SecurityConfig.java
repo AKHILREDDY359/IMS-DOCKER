@@ -37,13 +37,13 @@ public class SecurityConfig {
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1.0/login", "/encode", "/uploads/**")
-                        .permitAll()
-                        .requestMatchers("/categories", "/items", "/orders", "/payments", "/dashboard")
-                        .hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .anyRequest().authenticated()
-                )
+                .requestMatchers("/login", "/encode", "/uploads/**")
+                .permitAll()
+                .requestMatchers("/categories", "/items", "/orders", "/payments", "/dashboard")
+                .hasAnyRole("USER", "ADMIN")
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+             )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
