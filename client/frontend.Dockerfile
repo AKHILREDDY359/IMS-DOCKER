@@ -1,16 +1,25 @@
-# Build the React app
-FROM node:18 AS build
+# Build stage
+FROM node:18-alpine as build
+
 WORKDIR /app
+
+# Accept build-time API URL for Vite
+ARG VITE_API_URL
+ENV VITE_API_URL=${VITE_API_URL}
+
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
 RUN npm run build
 
-# Serve the React app with Nginx
+# Serve stage (using nginx)
 FROM nginx:alpine
-# Copy the build output from the 'build' stage to the Nginx web root directory
-COPY --from=build /app/build /usr/share/nginx/html
-# Expose port 80, the default HTTP port for Nginx
+
+# Copy custom nginx config with SPA fallback
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy built assets
+COPY --from=build /app/dist /usr/share/nginx/html
+
 EXPOSE 80
-# Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
