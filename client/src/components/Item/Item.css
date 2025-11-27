@@ -1,0 +1,63 @@
+.item-card {
+    position: relative;
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px var(--shadow-color);
+}
+
+.item-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    border: 3px solid var(--text-white);
+    object-fit: contain;
+    background: rgba(0,0,0,0.05);
+    display: block;
+}
+
+.last-item-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--warning-color);
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.out-of-stock-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--danger-color);
+    color: var(--text-white);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.btn-success:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.stock-info {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.stock-warning {
+    color: var(--warning-color);
+}
+
+.stock-danger {
+    color: var(--danger-color);
+}

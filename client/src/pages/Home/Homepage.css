@@ -1,0 +1,137 @@
+/* Use global variables from index.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* index.css or global.css */
+html, body{
+  height: auto;
+  overflow-y: auto;
+  background-color: var(--bg-primary);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+main {
+  flex: 1;
+  background-color: var(--bg-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #ffffff; /* Fallback color */
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn.primary {
+  background-color: var(--accent-primary);
+  color: var(--text-white);
+}
+
+.btn.primary:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 2px solid var(--accent-primary);
+}
+
+.btn.secondary:hover {
+  background-color: rgba(86, 130, 177, 0.1);
+  transform: translateY(-2px);
+}
+
+section {
+  padding: 5rem 1rem;
+  background-color: var(--bg-primary);
+}
+
+/* Add these new utility classes */
+.text-primary {
+  color: var(--accent-primary) !important;
+}
+
+.text-secondary {
+  color: var(--accent-secondary) !important;
+}
+
+.text-light {
+  color: var(--text-white) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.bg-primary {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+.border-primary {
+  border-color: var(--accent-primary) !important;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
+}

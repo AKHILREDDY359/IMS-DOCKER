@@ -1,0 +1,282 @@
+:root {
+  /* Primary Colors - Updated to new palette */
+  --bg-primary: #E7F2EF; /* very light mint */
+  --bg-secondary: #A1C2BD; /* pale green */
+  --bg-tertiary: #708993; /* blue-gray */
+
+  /* Accent Colors - Derived from palette */
+  --accent-primary: #708993; /* blue-gray */
+  --accent-secondary: #A1C2BD; /* pale green */
+  --accent-tertiary: #19183B; /* deep navy */
+
+  /* Text Colors */
+  --text-light: #1a202c;
+  --text-dark: #2d3748;
+  --text-muted: #718096;
+  --text-white: #ffffff;
+
+  /* UI Colors */
+  --border-color: rgba(113, 128, 150, 0.15);
+  --shadow-color: rgba(113, 128, 150, 0.08);
+  --success-color: #48bb78;
+  --warning-color: #ed8936;
+  --danger-color: #f56565;
+
+  /* Gradients - Using new colors */
+  --gradient-primary: #5682B1;   /* solid */
+  --gradient-secondary: #E7F2EF; /* solid */
+  --gradient-tertiary: #19183B;  /* solid */
+  --gradient-smooth: #739EC9;    /* solid */
+
+  /* Transitions */
+  --transition-speed: 0.4s;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1000;
+  transition: all var(--transition-speed) var(--transition-smooth);
+  background-color: var(--accent-tertiary);
+}
+
+.navbar-scrolled {
+  background-color: var(--accent-tertiary);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  height: 70px;
+}
+
+/* Ensure link contrast on light scrolled navbar */
+.navbar-scrolled .nav-menu a {
+  color: var(--bg-primary);
+}
+
+.navbar-scrolled .nav-menu a:hover {
+  color: var(--accent-primary);
+}
+
+.navbar-containerr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-white) !important;
+  margin: 0;
+}
+
+/* Darken logo text when navbar is on light background */
+.navbar-scrolled .logo h1 {
+  color: var(--text-white) !important;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-left: 2.5rem;
+}
+
+.nav-menu a {
+  color: var(--bg-primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+  transition: color var(--transition-speed) var(--transition-smooth);
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--accent-secondary);
+  transition: width var(--transition-speed) var(--transition-smooth);
+}
+
+.nav-menu a:hover {
+  color: var(--accent-primary);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.login-btn {
+  background: var(--accent-primary);
+  color: var(--bg-primary) !important;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: all var(--transition-speed) var(--transition-smooth);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: var(--accent-tertiary); /* black */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px var(--shadow-color);
+}
+
+.login-btn::after {
+  display: none;
+}
+
+/* User chip and logout button */
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--bg-primary);
+  color: var(--accent-tertiary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-avatar {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-smooth);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  background: var(--accent-tertiary);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--bg-primary);
+  border-radius: 3px;
+  transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+/* Dark bars when scrolled to light background */
+.navbar-scrolled .menu-toggle span {
+  background-color: var(--bg-primary);
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    margin: 1.5rem 0;
+  }
+
+  /* Mobile menu uses light background, so use dark text for contrast */
+  .nav-menu a {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+
+  .user-chip {
+    background: var(--bg-secondary);
+    color: var(--text-light);
+  }
+
+  .logout-btn {
+    background: var(--accent-primary);
+  }
+}

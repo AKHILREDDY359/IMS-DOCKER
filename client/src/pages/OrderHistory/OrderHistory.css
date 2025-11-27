@@ -1,0 +1,124 @@
+.orders-history-container {
+    padding: 20px;
+    height: calc(100vh - 5rem);
+    box-sizing: border-box;
+    background: var(--bg-primary);
+}
+
+.orders-history-container h2 {
+    color: var(--accent-primary);
+    font-weight: 800;
+}
+
+/* Override Bootstrap text-light on heading if present */
+.orders-history-container h2.text-light {
+    color: var(--text-dark) !important;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th {
+    font-weight: 700;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: 0.85em;
+    padding: 5px 8px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+    .table td, .table th {
+        white-space: nowrap;
+    }
+}
+
+.filters-section {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.filters-section .input-group-text {
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+.filters-section .form-control,
+.filters-section .form-select {
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+.filters-section .form-control::placeholder {
+    color: var(--text-dark);
+    opacity: 0.6;
+}
+
+.filters-section .form-control:focus,
+.filters-section .form-select:focus {
+    background-color: var(--bg-primary);
+    border-color: var(--accent-primary);
+    color: var(--text-dark);
+    box-shadow: none;
+}
+
+.filters-section .btn-secondary {
+    background: var(--accent-primary);
+    border-color: transparent;
+    color: var(--text-dark);
+}
+
+.filters-section .btn-secondary:hover {
+    background: var(--accent-tertiary);
+    border-color: transparent;
+}
+
+/* Table text color and numeric amount highlight */
+.orders-history-container .table {
+    color: var(--text-dark);
+}
+
+.orders-history-container .table thead {
+    background: var(--bg-primary) !important;
+    color: var(--text-dark) !important;
+}
+.orders-history-container .table thead th {
+    color: var(--text-dark) !important;
+}
+
+/* Order Id column distinct color */
+.orders-history-container .table thead th:first-child,
+.orders-history-container .table tbody td:first-child {
+    color: var(--accent-primary) !important;
+    font-weight: 700;
+}
+
+/* Neutralize Bootstrap's table-dark */
+.orders-history-container .table-dark {
+    --bs-table-bg: var(--bg-primary);
+    --bs-table-color: var(--text-dark);
+}
+
+.orders-history-container .table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* Columns: Order Id, Customer, Items, Total, Payment, Status, Date */
+.orders-history-container .table tbody tr td:nth-child(4) {
+    color: var(--warning-color);
+    font-weight: 700;
+}

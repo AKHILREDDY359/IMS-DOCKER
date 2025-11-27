@@ -1,0 +1,115 @@
+.explore-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    height: calc(100vh - 5rem);
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.left-column {
+    flex: 0.7;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.first-row  {
+    flex: 0.3;
+    box-sizing: border-box;
+}
+
+.horizontal-line {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.second-row {
+    flex: 0.7;
+    box-sizing: border-box;
+}
+
+.right-column {
+    flex: 0.3;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.cart-summary-container {
+    flex: 0.3;
+    border-top: 1px solid var(--border-color);
+}
+
+.cart-item {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.last-item-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: var(--warning-color);
+    color: var(--text-dark);
+    backdrop-filter: blur(5px);
+}
+
+.stock.last {
+    background: rgba(237, 137, 54, 0.2);
+    color: var(--warning-color);
+}
+
+/* Toast customization */
+.toast {
+    background: var(--bg-secondary) !important;
+    color: var(--text-light) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.toast-success {
+    border-left: 4px solid var(--accent-primary) !important;
+}
+
+.toast-error {
+    border-left: 4px solid var(--accent-secondary) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

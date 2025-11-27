@@ -1,0 +1,23 @@
+.login-background {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 480px;
+    border: none;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.card-body {
+    padding: 2rem;
+}

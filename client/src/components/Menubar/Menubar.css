@@ -1,0 +1,76 @@
+.navbar {
+    box-shadow: 0 8px 32px var(--shadow-color);
+    background: var(--gradient-primary);
+    backdrop-filter: blur(10px);
+}
+
+/* Force Bootstrap dark navbar to use our palette */
+.navbar.bg-dark {
+    background-color: var(--gradient-tertiary) !important; /* deep navy */
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--text-white) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: var(--accent-secondary) !important; /* #739EC9 */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 1rem;
+    color: var(--text-white) !important;
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.nav-link:hover {
+    color: var(--accent-tertiary) !important;
+    text-shadow: 0 0 8px rgba(240, 147, 251, 0.35);
+}
+
+.nav-link.active {
+    color: var(--text-white) !important;
+}
+
+/* Username next to profile icon */
+.navbar-username {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .navbar-username {
+        max-width: 120px;
+    }
+}
+
+.form-control {
+    border-radius: 20px 0 0 20px;
+}
+
+.btn-outline-light {
+    border-radius: 0 20px 20px 0;
+    border-color: rgba(255,255,255,0.4) !important;
+    color: var(--text-white) !important;
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.btn-outline-light:hover {
+    background: var(--gradient-tertiary) !important;
+    border-color: transparent !important;
+}

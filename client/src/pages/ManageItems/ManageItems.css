@@ -1,0 +1,52 @@
+.items-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    height: calc(100vh - 5rem);
+    box-sizing: border-box;
+    background: transparent;
+    --module-accent: var(--accent-primary); /* bright blue */
+}
+
+.left-column {
+    flex: 0.7;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 2px solid var(--module-accent);
+    border-radius: 16px;
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.right-column {
+    flex: 0.3;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 2px solid var(--module-accent);
+    border-radius: 16px;
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+/* Headings inside panels */
+.left-column h3, .right-column h3 {
+    color: var(--module-accent);
+}
+
+/* Buttons inside this page */
+.items-container .btn, .items-container button {
+    background-color: var(--module-accent);
+    color: var(--bg-primary);
+}
+
+.items-container .btn:hover, .items-container button:hover {
+    background-color: var(--accent-tertiary); /* black */
+}

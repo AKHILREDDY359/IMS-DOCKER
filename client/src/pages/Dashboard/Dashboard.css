@@ -1,0 +1,233 @@
+body, html {
+    background: var(--gradient-secondary) !important;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-light);
+}
+
+.dashboard-wrapper {
+    padding: 2rem;
+    background: transparent;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-content h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.stat-content p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--warning-color);
+}
+
+/* Charts */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.chart-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.chart-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-4px);
+}
+
+.chart-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Recent Orders */
+.recent-orders-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.orders-table-container {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.orders-table thead {
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--text-dark);
+}
+
+.orders-table th, .orders-table td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.orders-table tbody tr {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.orders-table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* Highlight numeric Amount column in Recent Orders (3rd column) */
+.orders-table tbody tr td:nth-child(3) {
+    color: var(--warning-color);
+    font-weight: 700;
+}
+
+/* Badges */
+.payment-method, .status-badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    color: var(--text-white);
+}
+
+.payment-method.cash { background-color: var(--success-color); }
+.payment-method.online { background: var(--accent-primary); }
+
+.status-badge.success { background-color: var(--success-color); }
+.status-badge.failed { background-color: var(--danger-color); }
+.status-badge.pending { background-color: var(--warning-color); }
+
+/* States */
+.loading, .error {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 2rem;
+    color: #888;
+}
+
+/* Scrollbar Dark Styling (Optional) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+/* Add these new styles */
+.low-stock-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.item-thumbnail {
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+    object-fit: contain;
+    background: rgba(0,0,0,0.05);
+}
+
+.stock-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.stock-badge.low-stock {
+    background-color: rgba(255, 122, 0, 0.15);
+    color: var(--warning-color);
+}
+
+.stock-badge.out-of-stock {
+    background-color: rgba(245, 101, 101, 0.2);
+    color: #f56565;
+}
+
+/* Low Stock table numeric columns: Current Stock (3) and Price (4) */
+.low-stock-card .orders-table tbody tr td:nth-child(3),
+.low-stock-card .orders-table tbody tr td:nth-child(4) {
+    color: var(--warning-color);
+    font-weight: 700;
+}
+
+.status-badge.low-stock {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.status-badge.out-of-stock {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}

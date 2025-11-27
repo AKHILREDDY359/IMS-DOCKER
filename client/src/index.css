@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Project theme: Orange / Light-Orange / White */
+  /* Backgrounds */
+  --bg-primary: #ffffff;   /* white */
+  --bg-secondary: #FFF4E6; /* light orange */
+  --bg-tertiary: #FFE8CC;  /* softer light orange */
+
+  /* Accents */
+  --accent-primary: #FD7E14; /* orange */
+  --accent-secondary: #FFA94D; /* light orange accent */
+  --accent-tertiary: #CC6B00; /* deep orange for strong contrast */
+
+  /* Text */
+  --text-light: #111827;  /* near-black */
+  --text-dark: #111827;   /* near-black */
+  --text-muted: #6B7280;  /* slate gray */
+  --text-white: #ffffff;
+
+  /* UI */
+  --border-color: rgba(17, 24, 39, 0.12);
+  --shadow-color: rgba(17, 24, 39, 0.08);
+  --success-color: #22c55e;
+  --warning-color: #f59e0b; /* amber */
+  --danger-color: #ef4444;
+
+  /* Solid gradient tokens (used as solids in components) */
+  --gradient-primary: var(--accent-primary);
+  --gradient-secondary: var(--bg-secondary);
+  --gradient-tertiary: var(--accent-tertiary);
+  --gradient-smooth: var(--accent-secondary);
+
+  /* Transitions */
+  --transition-speed: 0.4s;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* index.css or global.css */
+html, body, #root {
+  height: auto;
+  overflow-y: auto;
+}
+
+/* Bright, high-contrast global typography */
+body {
+  color: var(--text-dark);
+  background-color: var(--bg-primary);
+}
+
+/* Light app background sections can use bg-secondary */
+.section-light {
+  background-color: var(--bg-secondary);
+}
+.section-soft {
+  background-color: var(--bg-tertiary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark) !important;
+  font-weight: 800;
+}
+
+p, span, label, small, li {
+  color: var(--text-dark);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-tertiary);
+}
+
+/* Global form styling: inputs, selects, textareas */
+label {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.form-control,
+.form-select,
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+select {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-dark) !important;
+  border: 1px solid var(--accent-secondary) !important;
+  box-shadow: none !important;
+}
+
+.form-control::placeholder,
+textarea::placeholder,
+input::placeholder {
+  color: var(--text-dark) !important;
+  opacity: 0.6;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none !important;
+  border-color: var(--accent-tertiary) !important; /* black on focus */
+  box-shadow: 0 0 0 0.1rem rgba(0,0,0,0.12) !important;
+}
+
+/* Option text color in selects */
+select option {
+  color: var(--text-dark);
+}
+
+/* Buttons default to blue with peach text for contrast */
+.btn,
+button {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+}
+
+.btn:hover,
+button:hover {
+  background-color: var(--accent-tertiary);
+  color: var(--bg-primary);
+}
+
+.btn:hover,
+button:hover {
+  background-color: var(--accent-tertiary);
+  color: var(--bg-primary);
+}
